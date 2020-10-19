@@ -1,6 +1,6 @@
 package Donnee;
 
-public class AbstractCompetence {
+public abstract class AbstractCompetence {
 
         protected  static Integer IdCTotal=1;
         protected String NomComp;

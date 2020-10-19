@@ -1,6 +1,6 @@
 package Donnee;
 
-public class ServiceClient {
+public abstract class ServiceClient {
     protected Integer idServiceClient;
     protected static Integer idTotal=1;
     protected String nomServiceClient;
