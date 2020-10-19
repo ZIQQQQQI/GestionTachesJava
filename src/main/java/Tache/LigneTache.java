@@ -1,14 +1,15 @@
 package Tache;
 
 import Compte.AbstractIntervenant;
+import Donnee.AbstractCompetence;
 
 import java.util.ArrayList;
 
 public class LigneTache extends AbstractLigneTache {
 
 
-    public LigneTache(Integer id,Tache tache,AbstractIntervenant intervenant, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
-        super(id,tache,intervenant, libLT, prixLT, etatLT, nbPersonne);
+    public LigneTache(AbstractCompetence competence, Integer id, Tache tache, AbstractIntervenant intervenant, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
+        super(competence,id,tache,intervenant, libLT, prixLT, etatLT, nbPersonne);
     }
 
 
@@ -49,6 +50,7 @@ public class LigneTache extends AbstractLigneTache {
     public ArrayList<AbstractMessage> getListMessage() {
         return super.listMessage;
     }
+
 
 
 }

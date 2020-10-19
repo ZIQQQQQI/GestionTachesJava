@@ -8,6 +8,9 @@ public class Tache extends AbstractTache{
         super(id,des,client, libelT, duree);
     }
 
+
+
+
     //ajouter une ligne de tache dans listTache
     public void addTache(AbstractLigneTache tache){
         super.listTache.add(tache);
