@@ -5,9 +5,8 @@ public abstract class AbtractDirection {
     protected static Integer idTotal=1;
     protected String nomD;
 
-    public AbtractDirection(String nomD) {
+    public AbtractDirection(String nomD,Integer id) {
         this.nomD = nomD;
-        this.idD=this.idTotal;
-        this.idTotal++;
+        this.idD=id;
     }
 }
