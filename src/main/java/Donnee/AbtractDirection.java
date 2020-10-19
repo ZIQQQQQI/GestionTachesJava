@@ -1,6 +1,6 @@
 package Donnee;
 
-public class AbtractDirection {
+public abstract class AbtractDirection {
     protected  Integer idD;
     protected static Integer idTotal=1;
     protected String nomD;

@@ -1,25 +1,15 @@
 package Compte;
 
-public class AbstractPersonne {
-    protected static Integer idTotal=1;
-    protected Integer idP;
-    protected String nomP;
-    protected String adresseP;
-    protected String mailP;
-    protected String ibanP;
-    protected String bivP;
-    protected String MdpP;
+public interface AbstractPersonne {
+    static Integer idTotal=1;
+    Integer idP = null;
+    String nomP = null;
+    String adresseP = null;
+    String mailP = null;
+    String ibanP = null;
+    String biCP = null;
+    String MdpP = null;
 
-    public AbstractPersonne(String nomP, String adresseP, String mailP, String ibanP, String bivP, String mdpP) {
-        this.nomP = nomP;
-        this.adresseP = adresseP;
-        this.mailP = mailP;
-        this.ibanP = ibanP;
-        this.bivP = bivP;
-        MdpP = mdpP;
-        this.idP=this.idTotal;
-        this.idTotal++;
 
-    }
 
 }
