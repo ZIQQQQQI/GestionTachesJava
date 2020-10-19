@@ -1,5 +1,9 @@
 package Reclamation;
 
-public abstract class AbstractReclamation {
+import Tache.AbstractTache;
 
+public abstract class AbstractReclamation {
+    protected String description;
+    protected AbstractTache tache;
+    protected String ok;
 }
