@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractLigneTache {
+
+    protected Integer idLT;
+    protected Tache tache;
     protected AbstractIntervenant intervenant;
     protected Integer codeLT;
     protected String libLT;
@@ -14,15 +17,20 @@ public abstract class AbstractLigneTache {
     protected Integer nbPersonne;
     protected ArrayList<AbstractMessage> listMessage=new ArrayList<>();
 
-    public AbstractLigneTache(AbstractIntervenant intervenant, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
+    public AbstractLigneTache(Integer id,Tache tache,AbstractIntervenant intervenant, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
         this.intervenant = intervenant;
         this.libLT = libLT;
         this.prixLT = prixLT;
         this.etatLT = etatLT;
         this.nbPersonne = nbPersonne;
+        this.tache=tache;
+        this.idLT=id;
+
     }
 
     public void setPrixLT(Float prixLT) {
         this.prixLT = prixLT;
     }
+
+
 }
