@@ -1,18 +1,23 @@
 package Compte;
 
+import Reclamation.AbstractReclamation;
+import Tache.AbstractLigneTache;
+
 import java.util.ArrayList;
 
 public class Intervenant extends AbstractIntervenant {
-    private ArrayList<>
-    public Intervenant() {
+    private ArrayList<AbstractLigneTache> tachesProposees = new ArrayList<>();
 
+
+    public void envoyerMessageReclamation(MessageIntervenant msg, AbstractReclamation r){
+        AbstractReclamation.addMessage(msg);
     }
 
-    public void envoyerMessageReclamation(Message msg, AbstractReclamation r){
-
+    public void accepterTache(AbstractLigneTache lt){
+        tachesProposees.indexOf(lt).setEtat(enCours);
     }
 
-    public void accepterTache(){
-
+    public void refuserTache(AbstractLigneTache lt){
+        tachesProposees.indexOf(lt).setEtat(refusée);
     }
 }
