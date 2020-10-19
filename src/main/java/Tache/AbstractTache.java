@@ -10,7 +10,8 @@ public abstract class AbstractTache {
     protected String libelT;
     protected String descriptionT;
     protected Integer duree;
-    protected ArrayList<AbstractLigneTache> listTahce;
+    protected ArrayList<AbstractLigneTache> listTache;
+
 
 
 }
