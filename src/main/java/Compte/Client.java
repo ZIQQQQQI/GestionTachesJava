@@ -9,6 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client extends AbstractClient {
+    public Client(){
+        super();
+    }
     public Client(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
         super(id,adresse, mail, iban, bic, mdp);
     }
