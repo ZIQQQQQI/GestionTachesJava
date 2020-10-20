@@ -2,12 +2,11 @@ package Donnee;
 
 public class AbstractDomaineCompetence {
     protected String NomDc;
-    protected static Integer IdTotal=1;
+
     protected Integer IdC;
 
-    public AbstractDomaineCompetence(String nomDc) {
+    public AbstractDomaineCompetence(String nomDc,Integer id) {
         NomDc = nomDc;
-        this.IdC=this.IdTotal;
-        this.IdTotal++;
+        this.IdC=id;
     }
 }

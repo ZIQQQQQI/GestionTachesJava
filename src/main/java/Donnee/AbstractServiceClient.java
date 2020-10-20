@@ -2,13 +2,11 @@ package Donnee;
 
 public class AbstractServiceClient {
     protected Integer idServiceClient;
-    protected static Integer idTotal=1;
     protected String nomServiceClient;
 
-    public AbstractServiceClient(String nomServiceClient) {
+    public AbstractServiceClient(String nomServiceClient,Integer id) {
         this.nomServiceClient = nomServiceClient;
-        this.idServiceClient=this.idTotal;
-        this.idTotal++;
+        this.idServiceClient=id;
     }
 
 
