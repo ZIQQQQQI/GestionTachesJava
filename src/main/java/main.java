@@ -13,6 +13,8 @@ public class main {
         System.out.println(tang.getIdE());
         System.out.println(si.getIdE());
 
+
+
     }
 
 }
