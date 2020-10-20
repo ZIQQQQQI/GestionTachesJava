@@ -13,13 +13,13 @@ public abstract class AbstractLigneTache {
     protected AbstractIntervenant intervenant;
     protected Integer codeLT;
     protected String libLT;
-    protected Float prixLT;
+    protected Double prixLT;
     protected String etatLT;
     protected Integer nbPersonne;
     protected AbstractCompetence competence;
     protected ArrayList<AbstractMessage> listMessage=new ArrayList<>();
     protected ArrayList<AbstractIntervenant> listIntervenant;
-    public AbstractLigneTache(AbstractCompetence competence,Integer id,Tache tache, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
+    public AbstractLigneTache(AbstractCompetence competence,Integer id,Tache tache, String libLT, Double prixLT, String etatLT, Integer nbPersonne) {
         this.competence=competence;
         this.libLT = libLT;
         this.prixLT = prixLT;
@@ -28,10 +28,11 @@ public abstract class AbstractLigneTache {
         this.tache=tache;
         this.idLT=id;
         this.listIntervenant=new ArrayList<>();
+        tache.addTache(this);
 
     }
 
-    public void setPrixLT(Float prixLT) {
+    public void setPrixLT(Double prixLT) {
         this.prixLT = prixLT;
     }
 
