@@ -50,7 +50,11 @@ public class main {
         //L'intervenant Zhang accepte une tache
          zhang.accepterTache(lt1);
          //L'intervenant Zhang refuse une tache
-         zhang.refuseTache(lt2);
+        zhang.refuseTache(lt2);
+         zhang.envoyerMessageTache("Bonjour, pouvez-vous détailler votre besoin", lt1);
+
+
+
 
         //trouve des intervenants qui a accpte une tache
         //ArrayList<AbstractIntervenant> liste=lt1.getAccepte();
