@@ -1,6 +1,8 @@
 package Tache;
 
-public class AbstractMessage {
+import Compte.AbstractIntervenant;
+
+public abstract class AbstractMessage {
 
         protected String date;
         protected String contenu;
@@ -10,5 +12,7 @@ public class AbstractMessage {
             this.date = date;
             this.contenu = contenu;
         }
+
+
 
 }

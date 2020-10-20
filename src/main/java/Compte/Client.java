@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Client extends AbstractClient {
-    private ArrayList<Tache> mesTaches = new ArrayList<>();
+
 
     public Client(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
         super(id,adresse, mail, iban, bic, mdp);
