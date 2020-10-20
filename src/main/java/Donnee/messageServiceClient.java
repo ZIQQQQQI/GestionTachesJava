@@ -1,10 +1,7 @@
-package Compte;
+package Donnee;
 
-import Reclamation.Reclamation;
+import Donnee.ServiceClient;
 import Tache.AbstractMessage;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class messageServiceClient extends AbstractMessage {
     public ServiceClient expediteur;
