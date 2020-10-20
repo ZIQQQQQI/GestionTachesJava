@@ -30,6 +30,7 @@ public class JDBCUtils {
     public static DataSource getDataSource(){
         return ds;
     }
+
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }

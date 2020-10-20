@@ -12,6 +12,9 @@ import java.util.Date;
 
 public class Client extends AbstractClient {
 
+    public Client(){
+
+    }
 
     public Client(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
         super(id,adresse, mail, iban, bic, mdp);
@@ -49,7 +52,7 @@ public class Client extends AbstractClient {
     //proprose une tache
     public Tache proposeTache(Integer id,String des,String libel,Integer duree){
         Tache t1= new Tache(id,des,this,libel,duree);
-        mesTaches.add(t1);
+        //mesTaches.add(t1);
         return t1 ;
     };
 

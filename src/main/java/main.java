@@ -1,6 +1,7 @@
 import Compte.AbstractIntervenant;
 import Compte.Client;
 import Compte.Intervenant;
+import CompteDataBase.ClientDB;
 import Donnee.Competence;
 import Donnee.DomaineCompetence;
 import Tache.LigneTache;
@@ -62,6 +63,15 @@ public class main {
        /* for(AbstractIntervenant i:liste){
             System.out.println(((Intervenant)i).getNom());
         }*/
+
+        Client loginClient=new Client();
+        loginClient.setMail("Samuel@yahoo.fr");
+        loginClient.setMdp("982892");
+
+        ClientDB Db =new ClientDB();
+        Client client=Db.login(loginClient);
+
+        System.out.println(client);
 
 
 
