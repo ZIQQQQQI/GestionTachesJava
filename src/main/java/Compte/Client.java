@@ -1,5 +1,6 @@
 package Compte;
 
+import Reclamation.Reclamation;
 import Tache.LigneTache;
 import Tache.AbstractLigneTache;
 import Tache.Tache;
@@ -34,7 +35,12 @@ public class Client extends AbstractClient {
         String date = sdf.format(new Date());
         ligneTache.addMessage(new messageClient(date,contenu,this));
     }
-
+    //envoyer message pour une reclamtion
+    public void envoyerMessageReclamtion(String contenu, Reclamation reclamation){
+        SimpleDateFormat sdf =   new SimpleDateFormat( " yyyy-MM-dd HH:mm:ss " );
+        String date = sdf.format(new Date());
+        reclamation.addMessage(new messageClient(date,contenu,this));
+    }
 
     //proprose une tache
     public Tache proproseTache(Integer id,String des,String libel,Integer duree){

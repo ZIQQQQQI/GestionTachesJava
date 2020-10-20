@@ -19,9 +19,8 @@ public abstract class AbstractLigneTache {
     protected AbstractCompetence competence;
     protected ArrayList<AbstractMessage> listMessage=new ArrayList<>();
     protected ArrayList<AbstractIntervenant> listIntervenant;
-    public AbstractLigneTache(AbstractCompetence competence,Integer id,Tache tache,AbstractIntervenant intervenant, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
+    public AbstractLigneTache(AbstractCompetence competence,Integer id,Tache tache, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
         this.competence=competence;
-        this.intervenant = intervenant;
         this.libLT = libLT;
         this.prixLT = prixLT;
         this.etatLT = etatLT;
@@ -36,5 +35,7 @@ public abstract class AbstractLigneTache {
         this.prixLT = prixLT;
     }
 
-
+    public void setEtatLT(String etat){
+        this.etatLT=etat;
+    }
 }
