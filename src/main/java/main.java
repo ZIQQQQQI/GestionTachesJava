@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-public class main {
-
-=======
 import Compte.Client;
 
 import java.sql.SQLOutput;
@@ -18,6 +14,5 @@ public class main {
         System.out.println(si.getIdE());
 
     }
->>>>>>> a3b6741380d97106471cc0f0574821807cc5afca
 
 }

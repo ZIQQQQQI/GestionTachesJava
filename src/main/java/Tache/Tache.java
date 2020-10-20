@@ -16,6 +16,9 @@ public class Tache extends AbstractTache{
     }
 >>>>>>> a3b6741380d97106471cc0f0574821807cc5afca
 
+
+
+
     //ajouter une ligne de tache dans listTache
     public void addTache(AbstractLigneTache tache){
         super.listTache.add(tache);

@@ -2,12 +2,6 @@ package Tache;
 
 import Compte.AbstractIntervenant;
 
-<<<<<<< HEAD
-public class LigneTache extends AbstractLigneTache {
-    public LigneTache(AbstractIntervenant intervenant, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
-        super(intervenant, libLT, prixLT, etatLT, nbPersonne);
-    }
-=======
 import java.util.ArrayList;
 
 public class LigneTache extends AbstractLigneTache {
@@ -57,5 +51,4 @@ public class LigneTache extends AbstractLigneTache {
     }
 
 
->>>>>>> a3b6741380d97106471cc0f0574821807cc5afca
 }
