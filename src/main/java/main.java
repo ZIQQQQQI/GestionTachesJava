@@ -39,19 +39,17 @@ public class main {
         Tache t;
         t = tang.proposeTache(1, "Créer une plateforme de micro-tasking", "JavaProjet", 30);
         //Le client décompose sa tâche en ligne de tache
-        LigneTache lt1, lt2;
-        lt1 = tang.ajouterLigneTache(t,1, c2, "faire la spécification fonctionnnelle", 250.,1 );
-        lt2 = tang.ajouterLigneTache(t, 2, c1, "développer le code java", 250., 2);
+       // LigneTache lt1, lt2;
 
         // Tache tacheJava=new Tache(1,"faire java",tang,"javaProjet",30);
         //creer une ligne de tache
         //LigneTache lt1=new LigneTache(c1,1,tacheJava,"bd",25.2f,"proprose",2);
 
         //L'intervenant Zhang accepte une tache
-         zhang.accepterTache(lt1);
+         //zhang.accepterTache(lt1);
          //L'intervenant Zhang refuse une tache
-        zhang.refuseTache(lt2);
-         zhang.envoyerMessageTache("Bonjour, pouvez-vous détailler votre besoin", lt1);
+        //zhang.refuseTache(lt2);
+        // zhang.envoyerMessageTache("Bonjour, pouvez-vous détailler votre besoin", lt1);
 
 
 

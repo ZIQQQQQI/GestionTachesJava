@@ -16,10 +16,12 @@ public class Client extends AbstractClient {
         super();
     };
 
+    //ajouter client dans BD
     public Client(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
         super(id,adresse, mail, iban, bic, mdp);
         this.mesTache=new ArrayList<Tache>();
     }
+
 
     //si cest une entreprise
     @Override
