@@ -11,10 +11,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Client extends AbstractClient {
-
+    ArrayList<Tache> mesTache;
+    public Client(){
+        super();
+    };
 
     public Client(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
         super(id,adresse, mail, iban, bic, mdp);
+        this.mesTache=new ArrayList<Tache>();
     }
 
     //si cest une entreprise
@@ -49,16 +53,10 @@ public class Client extends AbstractClient {
     //proprose une tache
     public Tache proposeTache(Integer id,String des,String libel,Integer duree){
         Tache t1= new Tache(id,des,this,libel,duree);
-        mesTaches.add(t1);
+        //mesTaches.add(t1);
         return t1 ;
     };
 
-    //ajouter une ligne de tache
-    public LigneTache ajouterLigneTache(Tache tache, Integer no, Competence c,String lib,Double prix, int nbP){
-        LigneTache lt= new LigneTache(c, no,tache,lib,prix,"proposée",nbP);
-        tache.addTache(lt);
-        return lt;
-    };
 
 
 
