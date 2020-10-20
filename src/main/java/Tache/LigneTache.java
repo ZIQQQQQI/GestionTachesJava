@@ -48,6 +48,10 @@ public class LigneTache extends AbstractLigneTache {
         return super.nbPersonne;
     }
 
+    public ArrayList<AbstractIntervenant> getAccepte(){
+        return this.listIntervenant;
+    }
+
     public ArrayList<AbstractMessage> getListMessage() {
         return super.listMessage;
     }
