@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class LigneTache extends AbstractLigneTache {
     ArrayList<Intervenant> listRefuse=new ArrayList<>();
 
-    public LigneTache(AbstractCompetence competence, Integer id, Tache tache, String libLT, Float prixLT, String etatLT, Integer nbPersonne) {
+    public LigneTache(AbstractCompetence competence, Integer id, Tache tache, String libLT, double prixLT, String etatLT, Integer nbPersonne) {
         super(competence,id,tache,libLT, prixLT, etatLT, nbPersonne);
     }
 
@@ -36,7 +36,7 @@ public class LigneTache extends AbstractLigneTache {
         return super.libLT;
     }
 
-    public Float getPrixLT() {
+    public Double getPrixLT() {
         return super.prixLT;
     }
 

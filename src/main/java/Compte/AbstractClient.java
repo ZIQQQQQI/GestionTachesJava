@@ -24,7 +24,7 @@ public abstract class AbstractClient implements AbstractPersonne,AbstractEntrepr
     String mdp ;
 
     public AbstractClient(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
-        this.idE=id;
+        this.idE = id;
         this.adresse = adresse;
         this.mail = mail;
         this.iban = iban;
