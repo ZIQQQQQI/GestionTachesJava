@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulaire inscription</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<H1>Formulaire d'inscription Intervenant</H1>
+<form action="test" method="post">
+    <label for="name">Nom et Prénom:</label>
+    <br/>
+    <input type="text" id="nom" name="nom" required
+           minlength="4" maxlength="8" size="10" placeholder="Nom">
+    <input type="text" id="pernom" name="prenom" required
+           minlength="4" maxlength="8" size="10" placeholder="Prénom">
+
+    <br/>
+    <br/>
+    <label for="name">N°Siret</label>
+    <br/>
+    <input type="text" id="noSiret" name="noSiret" required
+           minlength="4" maxlength="8" size="10">
+    <br/>
+    <br/>
+    <label for="adresse">Adresse</label>
+    <br/>
+    <input type="text" id="adresse" name="adresse" required
+           minlength="4" maxlength="30" size="30">
+    <br/>
+    <br/>
+    <label for="dispo">Disponibilité</label>
+    <br/>
+    <input type="date" id="DateDebut" name="DateDebut" required
+           minlength="4" maxlength="10" size="10">
+    <input type="date" id="DateFin" name="DateFin" required
+           minlength="4" maxlength="10" size="10">
+    <br/>
+    <br/>
+    <label for="email">E-mail</label>
+    <br/>
+    <input type="email" id="email"
+           pattern=".+@+." size="30" required>
+    <br/>
+    <br/>
+    <label for="pass">Mot de passe (8 caractères minimum):</label>
+    <br/>
+    <input type="password" id="pass" name="password"
+           minlength="8" required>
+    <br/>
+    <br/>
+    <label for="adresse">Profession</label>
+    <br/>
+    <input type="text" id="profession" name="profession" required
+           minlength="4" maxlength="30" size="30">
+    <br/>
+    <br/>
+    <p>Coordonnées bancaire</p>
+    <label for="iban"> IBAN: </label>
+    <br/>
+    <input type="text" id="iban"  placeholder="27 caractères max" maxlength="27">
+    <br/>
+    <br/>
+    <label for="bic"> BIC: </label>
+    <br/>
+    <input type="text" id="bic" name="bic" placeholder="BIC" maxlength="11">
+    <br/>
+    <br/>
+    <label for="dc">Domaine de compétences</label>
+
+    <br/><select name="dc" id="dc">
+    <option value="info">Informatique</option>
+</select>
+    <br/>
+    <br/>
+    <label for="comp">Compétences</label>
+
+    <br/><select name="compInf" id="compInf" multiple>
+    <option value="">Selectionner des compétences</option>
+    <option value="java">Java</option>
+    <option value="uml">UML</option>
+    <option value="html">HTML</option>
+    <option value="bpmn">BPMN</option>
+</select>
+    <br/>
+    <br/>
+    <input class="btnIns" type="submit" value="Valider">
+    <input class="btnIns" type="button" value="Annuler">
+</form>
+
+</body>
+</html>
