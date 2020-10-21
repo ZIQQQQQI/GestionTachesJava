@@ -19,14 +19,14 @@ public abstract class AbstractClient implements AbstractPersonne,AbstractEntrepr
     //chose commune
     String adresse ;
     String mail ;
-    String iban ;
-    String bic ;
+    Integer iban ;
+    Integer bic ;
     String mdp ;
 
     public AbstractClient(){
 
     }
-    public AbstractClient(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
+    public AbstractClient(Integer id,String adresse, String mail, Integer iban, Integer bic, String mdp) {
         this.idE = id;
         this.adresse = adresse;
         this.mail = mail;
@@ -101,19 +101,19 @@ public abstract class AbstractClient implements AbstractPersonne,AbstractEntrepr
         this.mail = mail;
     }
 
-    public String getIban() {
+    public Integer getIban() {
         return iban;
     }
 
-    public void setIban(String iban) {
+    public void setIban(Integer iban) {
         this.iban = iban;
     }
 
-    public String getBic() {
+    public Integer getBic() {
         return bic;
     }
 
-    public void setBic(String bic) {
+    public void setBic(Integer bic) {
         this.bic = bic;
     }
 

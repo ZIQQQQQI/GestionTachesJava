@@ -17,7 +17,7 @@ public class Client extends AbstractClient {
     };
 
     //ajouter client dans BD
-    public Client(Integer id,String adresse, String mail, String iban, String bic, String mdp) {
+    public Client(Integer id,String adresse, String mail, Integer iban, Integer bic, String mdp) {
         super(id,adresse, mail, iban, bic, mdp);
         this.mesTache=new ArrayList<Tache>();
     }

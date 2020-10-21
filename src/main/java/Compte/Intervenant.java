@@ -16,8 +16,8 @@ public class Intervenant extends AbstractIntervenant{
    ArrayList<Competence> listCompetence;
 
 
-    public Intervenant(Integer id, String adresse, String mail, String iban, String bic, String mdp) {
-        super(id, adresse, mail, iban, bic, mdp);
+    public Intervenant(Integer id, String adresse, String mail, Integer iban, Integer bic, String mdp,String debut,String fin) {
+        super(id, adresse, mail, iban, bic, mdp,debut,fin);
         this.listCompetence=new ArrayList<>();
     }
 
@@ -60,5 +60,18 @@ public class Intervenant extends AbstractIntervenant{
     public String getNom(){return this.nom;}
     //get list de competence
     public ArrayList<Competence> getListCompetence(){return this.listCompetence;}
+    //get
 
+
+    public String getDateDebut() {
+        return dateDebut;
+    }
+
+    public String getDateFin() {
+        return dateFin;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
 }
