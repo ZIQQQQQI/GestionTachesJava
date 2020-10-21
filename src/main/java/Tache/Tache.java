@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Tache extends AbstractTache{
 
+
     public Tache(Integer id,String des,AbstractClient client, String libelT, Integer duree) {
         super(id,des,client, libelT, duree);
         super.listTache= new ArrayList<AbstractLigneTache>();
