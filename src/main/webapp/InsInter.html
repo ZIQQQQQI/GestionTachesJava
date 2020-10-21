@@ -7,13 +7,13 @@
 
 <body>
 <H1>Formulaire d'inscription Intervenant</H1>
-<form action="test" method="post">
+<form action="/PROJET_war/ServletInsInter" method="post">
     <label for="name">Nom et Prénom:</label>
     <br/>
     <input type="text" id="nom" name="nom" required
            minlength="4" maxlength="8" size="10" placeholder="Nom">
     <input type="text" id="pernom" name="prenom" required
-           minlength="4" maxlength="8" size="10" placeholder="Prénom">
+           minlength="4" maxlength="8" size="10" placeholder="Prenom">
 
     <br/>
     <br/>
@@ -40,7 +40,7 @@
     <label for="email">E-mail</label>
     <br/>
     <input type="email" id="email"
-           pattern=".+@+." size="30" required>
+           size="30" required>
     <br/>
     <br/>
     <label for="pass">Mot de passe (8 caractères minimum):</label>
@@ -58,7 +58,7 @@
     <p>Coordonnées bancaire</p>
     <label for="iban"> IBAN: </label>
     <br/>
-    <input type="text" id="iban"  placeholder="27 caractères max" maxlength="27">
+    <input type="text" id="iban"  name="iban" placeholder="27 caractères max" maxlength="27">
     <br/>
     <br/>
     <label for="bic"> BIC: </label>

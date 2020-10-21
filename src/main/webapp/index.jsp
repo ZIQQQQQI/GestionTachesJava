@@ -11,7 +11,15 @@
     <title>Title</title>
 </head>
 <body>
-hello world
+<a href="/PROJET_war/InsInter.html">Inscription Intervenant</a>
+<br>
+<a href="/####">Login Intervenant</a>
+<br>
+
+<a href="/#####">Inscripution Client</a>
+<br>
+<a href="/PROJET_war/login.html">Login Client</a>
+<br>
 
 </body>
 </html>

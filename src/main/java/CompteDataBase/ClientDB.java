@@ -44,6 +44,7 @@ public class ClientDB {
 
     }
 
+
     public void ajouterClient(Client client){
 
         String adresse=client.getAdresse();
@@ -55,6 +56,7 @@ public class ClientDB {
         int rows = this.template.update(sql,adresse,mail,iban,bic,mdp);
         System.out.println(rows);
     }
+
 
 
 }
