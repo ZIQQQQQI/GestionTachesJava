@@ -15,7 +15,7 @@ public class LoginClientServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
-        String email=req.getParameter("email");
+        String email=req.getParameter("username");
         String password=req.getParameter("password");
 
         Client loginclient = new Client();
@@ -27,10 +27,11 @@ public class LoginClientServlet extends HttpServlet {
 
         if(client==null){
             resp.getWriter().write("Echec de la connexion");
-            resp.setHeader("Location","/PROJET_war/login.html");
+            //resp.setHeader("Location","/PROJET_war/login.html");
 
         }else{
-            resp.setHeader("Location","index.jsp");
+            resp.getWriter().write("reussi de la connexion");
+            //resp.setHeader("Location","index.jsp");
         }
     }
 
