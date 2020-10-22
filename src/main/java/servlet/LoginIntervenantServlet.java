@@ -34,13 +34,13 @@ public class LoginIntervenantServlet extends HttpServlet {
         if(result==null){
             resp.getWriter().write("Echec de la connexion");
 
-            resp.addHeader ("refresh", "3;URL=/PROJET_war/loginInter.jsp");
+            resp.addHeader ("refresh", "1;URL=/PROJET_war/loginInter.jsp");
 
 
         }else{
             HttpSession session = req.getSession(true);
             session.setAttribute("mail",email);
-            resp.addHeader ("refresh", "3;URL=/PROJET_war/AccueilInter.jsp");
+            resp.addHeader ("refresh", "1;URL=/PROJET_war/AccueilInter.jsp");
 
         }
     }

@@ -37,7 +37,7 @@ public class ServletUpdateInter extends HttpServlet {
         dbc.updateIne(idc,in.getIdI());
         HttpSession session = request.getSession(true);
         session.setAttribute("mail",mail);
-        response.addHeader ("refresh", "3;URL=/PROJET_war/ProfilInt.jsp");
+        response.addHeader ("refresh", "1;URL=/PROJET_war/ProfilInt.jsp");
 
     }
 

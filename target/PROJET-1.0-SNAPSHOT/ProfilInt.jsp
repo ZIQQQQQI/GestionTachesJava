@@ -34,7 +34,7 @@
     <%
     IntervenantDB db=new IntervenantDB();
     Intervenant lui=db.unIntervenant((String)session.getAttribute("mail"));
-    out.print("<h3>Hello!" +lui.getMailI()+"</h3>");
+    out.print("<h3>Hello! " +lui.getMailI()+"</h3>");
     out.print("<input type=hidden value="+lui.getMailI()+ " name=email><br/>");
     out.print("Nosiret:<input type=text value="+lui.getIdI()+ " name=noSiret><br/>");
     out.print("Adresse:<input type=text value=' "+lui.getAdresseI()+ " ' name=adresse><br/>");
@@ -48,7 +48,6 @@
     <br/>
     <select name="compInf" id="compInf" multiple>
         <option value="">Selectionner des compétences</option>
-        <option value=1>Python</option>
         <%
             CompetenceDB dbc=new CompetenceDB();
             ArrayList<Competence> list=dbc.tousCom();

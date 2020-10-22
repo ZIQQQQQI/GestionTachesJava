@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="TacheDataBase.TacheInterDB" %>
 <%--
   Created by IntelliJ IDEA.
   User: woshi
@@ -23,17 +26,47 @@
     </ul>
 </div>
 <p> Information sur la tâche</p>
+
+
+
+
 <div id="tache">
-    <p>Les Infos</p>
+    <h1>Les Infos</h1>
+    <table >
+    <%
+        TacheInterDB dbi=new TacheInterDB();
+        String id= request.getParameter("id");
+
+
+        List<Map<String,Object>> list=dbi.unTache(id);
+        for (Map<String,Object> m:list
+        ) {
+            out.println("<tr><td>NomClient:"+m.get("NomC")+"</td></tr>");
+            out.println("<tr><td>PrenomClient:"+m.get("PrenomC")+"</td></tr>");
+            out.println("<tr><td>LibelleLigneTache:"+m.get("liblLt")+"</td></tr>");
+            out.println("<tr><td>Prix:"+m.get("PrixLT")+"</td></tr>");
+            out.println("<tr><td>NombrePersonne:"+m.get("NbPersLT")+"</td></tr>");
+            out.println("<tr><td>Duree:"+m.get("DureeT")+" Jours</td></tr>");
+            out.println("<tr><td>DescriptionTahce:"+m.get("DescriptionT")+"</td></tr>");
+            out.println("<tr><td>NoteCommunication:"+m.get("noteC")+"</td></tr>");
+            out.println("<tr><td>NoteRentablite:"+m.get("noteR")+"</td></tr>");
+
+        }
+
+    %>
+    </table>
+
 </div>
 
-<form name='form1' action = 'test' method = 'post' id="form1">
+<form name='form1' action = '/PROJET_war/ServletAccpterTache' method = 'get' id="form1">
     <input name="action" type="hidden" value="oui">
+    <input name="id" type="hidden" value=<%out.print(id);%>>
     <input class="btn" type="submit" value="Accepter">
 </form>
-<form name = "form2" action = "test" method = "post" id="form2">
+<form name = "form1" action = '/PROJET_war/ServletAccpterTache' method = "get" id="form2">
     <input name="action" type="hidden" value="non">
-    <input class="btn" type="button" value="Refuser">
+    <input name="id" type="hidden" value=<%out.print(id);%>>
+    <input class="btn" type="submit" value="Refuser">
 </form>
 
 

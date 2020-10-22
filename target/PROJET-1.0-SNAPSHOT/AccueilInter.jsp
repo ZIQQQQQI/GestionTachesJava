@@ -1,6 +1,8 @@
 <%@ page import="TacheDataBase.TacheInterDB" %>
 <%@ page import="Tache.LigneTache" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="CompteDataBase.IntervenantDB" %>
+<%@ page import="Compte.Intervenant" %><%--
   Created by IntelliJ IDEA.
   User: woshi
   Date: 2020/10/22
@@ -25,11 +27,17 @@
     </ul>
 </div>
 <div id="centre">
+    <%
+        IntervenantDB db=new IntervenantDB();
+        Intervenant lui=db.unIntervenant((String)session.getAttribute("mail"));
+        out.print("<h2>Hello! " +lui.getMailI()+"</h2>");
+    %>
     <div> <p> Les tâches qui vous sont proposées:</p>
 
         <%
+            String mail=(String)session.getAttribute("mail");
             TacheInterDB tacheinterdb=new TacheInterDB();
-            ArrayList<LigneTache> list =  tacheinterdb.getLigneTache("shaimaa@yahoo.fr");
+            ArrayList<LigneTache> listP =  tacheinterdb.getLigneTachePro(mail);
         %>
 
         <table border="1">
@@ -43,7 +51,7 @@
             </tr>
 
             <%
-                for (LigneTache lt:list){
+                for (LigneTache lt:listP){
 
                     out.println("<tr><td>"+lt.getIdLT()+"</td>");
                     out.println("<td>"+lt.getLibLT()+"</td>");
@@ -58,11 +66,33 @@
 
     </div>
     <div> <p> Les tâches que vous avez déjà acceptée:</p>
-        <ul>
-            <li><a href="TacheAccept.html">Nom de la Tache1</a></li>
-            <li><a href="TacheAccept.html">Nom de la Tache2</a></li>
-            <li><a href="TacheAccept.html">Nom de la Tache3</a></li>
-        </ul>
+        <%
+
+            ArrayList<LigneTache> listA =  tacheinterdb.getLigneTacheAcp(mail);
+        %>
+
+        <table border="1">
+            <tr>
+                <td>Code Ligne Tache</td>
+                <td>Liblle </td>
+                <td>Competence</td>
+                <td>Prix</td>
+                <td>Etat</td>
+                <td>Operation</td>
+            </tr>
+
+            <%
+                for (LigneTache lt:listA){
+
+                    out.println("<tr><td>"+lt.getIdLT()+"</td>");
+                    out.println("<td>"+lt.getLibLT()+"</td>");
+                    out.println("<td>"+lt.getCompetence().getNomComp()+"</td>");
+                    out.println("<td>"+lt.getPrixLT()+"</td>");
+                    out.println("<td>"+lt.getEtatLT()+"</td>");
+                    out.println("<td><a href='TacheAccept.jsp?id="+lt.getIdLT()+"'>Consulter</a></td></tr>");
+                }
+            %>
+        </table>
     </div>
 
 </div>

@@ -17,7 +17,7 @@ public class ServletInsInter extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         String nom=request.getParameter("nom");
-        String prenom=request.getParameter("Prenom");
+
         Integer siret= Integer.parseInt(request.getParameter("noSiret"));
         String adresse=request.getParameter("adresse");
         String debut=request.getParameter("DateDebut");
@@ -39,7 +39,7 @@ public class ServletInsInter extends HttpServlet {
         System.out.println(2+nom);
         HttpSession session = request.getSession(true);
         session.setAttribute("mail",mail);
-        response.addHeader ("refresh", "3;URL=/PROJET_war/AccueilInter.html");
+        response.addHeader ("refresh", "1;URL=/PROJET_war/AccueilInter.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
