@@ -17,8 +17,8 @@ public class TacheInterDB {
         this.template =new JdbcTemplate(JDBCUtils.getDataSource());
     }
 
-    public ArrayList<LigneTache> getLigneTache(String email){
-        ArrayList<LigneTache> resultat =new ArrayList<>();
+    public ArrayList<LigneTache> getLigneTachePro(String email){
+        ArrayList<LigneTache> ltPro =new ArrayList<>();
         int idc = 0;
 
         String sql1="select p.IdC from posseder p,intervenant i where i.NoSiret=p.NoSiret and i.MailI=?";
@@ -27,8 +27,17 @@ public class TacheInterDB {
             idc=(Integer) m.get("IdC");
         }
 
-        String sql2="select * from lignetache lt,competence c where lt.IdC=c.IdC and lt.EtatLT='proposee' and lt.IdC="+idc;
-        List<Map<String,Object>> listLTP =template.queryForList(sql2);
+        String sql2="Select * " +
+                "From Intervenant, Posseder, LigneTache  ,competence c " +
+                "Where LigneTache.IdC = Posseder.IdC " +
+                "AND Posseder.IdC=c.IdC And  Intervenant.NoSiret = Posseder.NoSiret  " +
+                "And LigneTache.EtatLT like 'proposee'  " +
+                "And Intervenant.MailI = ?  " +
+                "And Lignetache.codeLt not in ( Select codeLt " +
+                " From Accepter " +
+                "Where Accepter.statutAcc like 'refusee'  " +
+                "And Accepter.NoSiret = Intervenant.NoSiret );";
+        List<Map<String,Object>> listLTP =template.queryForList(sql2,email);
         for(Map<String,Object>m :listLTP){
             idc=(Integer) m.get("IdC");
             String nomc=(String)m.get("NomC");
@@ -38,13 +47,21 @@ public class TacheInterDB {
             Integer nbpersonne =(Integer)m.get("NbPers");
             String liblt=(String)m.get("LiblLT");
 
-            resultat.add(new LigneTache(new Competence(nomc,idc),codelt,null,liblt,prixlt,etatlt,nbpersonne));
+            ltPro.add(new LigneTache(new Competence(nomc,idc),codelt,null,liblt,prixlt,etatlt,nbpersonne));
         }
 
-        String sql3="select * from accepter a,intervenant i,lignetache lt, competence c where a.NoSiret=I.NoSiret and a.CodeLT=lt.CodeLT and lt.IdC=C.IdC and a.StatutAcc='acceptee'";
-        List<Map<String,Object>> listLTA =template.queryForList(sql3);
+
+        return ltPro;
+
+    }
+
+    public ArrayList<LigneTache> getLigneTacheAcp(String email){
+        ArrayList<LigneTache> ltAcp =new ArrayList<>();
+
+        String sql3="Select * From Accepter , LigneTache, Intervenant, Tache,competence C Where Accepter.CodeLt = LigneTache.codeLt And Accepter.NoSiret = Intervenant.NoSiret And LigneTache.codeT = Tache.codeT And Intervenant.MailI = ? And Accepter.StatutAcc like 'acceptee' AND C.IdC=lignetache.IdC";
+        List<Map<String,Object>> listLTA =template.queryForList(sql3,email);
         for(Map<String,Object>m :listLTA){
-            idc=(Integer) m.get("IdC");
+            Integer idc=(Integer) m.get("IdC");
             String nomc=(String)m.get("NomC");
             Integer codelt =(Integer) m.get("CodeLT");
             Double prixlt = ((Float)m.get("PrixLT")).doubleValue();
@@ -52,10 +69,9 @@ public class TacheInterDB {
             Integer nbpersonne =(Integer)m.get("NbPers");
             String liblt=(String)m.get("LiblLT");
 
-            resultat.add(new LigneTache(new Competence(nomc,idc),codelt,null,liblt,prixlt,etatlt,nbpersonne));
+            ltAcp.add(new LigneTache(new Competence(nomc,idc),codelt,null,liblt,prixlt,etatlt,nbpersonne));
         }
-        return resultat;
-
+        return ltAcp;
     }
 
 }

@@ -30,6 +30,15 @@ H1{
 	margin-left: 40%;
 	margin-top: 40px;
 }
+#form2{
+	float: left;
+}
+#form1{
+	float: right;
+}
+.hidden{
+	visibility: hidden;
+}
 #centreIns{
   margin-top: 80px;
   margin-left:30%;

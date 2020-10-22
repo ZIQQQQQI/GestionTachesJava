@@ -17,19 +17,28 @@
 
 <div id="gauche">
     <ul>
+
         <li ><a href="/PROJET_war/ProfilInt.jsp">Mon Profil</a></li>
         <li ><a href="/PROJET_war/AccueilInter.jsp">Mes tâches</a></li>
     </ul>
 </div>
 <p> Information sur la tâche</p>
 <div id="tache">
-    Les Infos
+    <p>Les Infos</p>
 </div>
 
-<input class="btn" type="button" value="Valider">
-<input class="btn" type="button" value="Refuser">
-
+<form name='form1' action = 'test' method = 'post' id="form1">
+    <input name="action" type="hidden" value="oui">
+    <input class="btn" type="submit" value="Accepter">
+</form>
+<form name = "form2" action = "test" method = "post" id="form2">
+    <input name="action" type="hidden" value="non">
+    <input class="btn" type="button" value="Refuser">
+</form>
 
 
 </body>
 </html>
+
+
+

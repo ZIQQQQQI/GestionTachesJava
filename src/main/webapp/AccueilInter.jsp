@@ -29,7 +29,7 @@
 
         <%
             TacheInterDB tacheinterdb=new TacheInterDB();
-            ArrayList<LigneTache> list =  tacheinterdb.getLigneTache("shaimaa@yahoo.fr");
+            ArrayList<LigneTache> listP =  tacheinterdb.getLigneTachePro("silu@gmail.com");
         %>
 
         <table border="1">
@@ -43,7 +43,7 @@
             </tr>
 
             <%
-                for (LigneTache lt:list){
+                for (LigneTache lt:listP){
 
                     out.println("<tr><td>"+lt.getIdLT()+"</td>");
                     out.println("<td>"+lt.getLibLT()+"</td>");
@@ -58,11 +58,33 @@
 
     </div>
     <div> <p> Les tâches que vous avez déjà acceptée:</p>
-        <ul>
-            <li><a href="TacheAccept.html">Nom de la Tache1</a></li>
-            <li><a href="TacheAccept.html">Nom de la Tache2</a></li>
-            <li><a href="TacheAccept.html">Nom de la Tache3</a></li>
-        </ul>
+        <%
+
+            ArrayList<LigneTache> listA =  tacheinterdb.getLigneTacheAcp("shaimaa@yahoo.fr");
+        %>
+
+        <table border="1">
+            <tr>
+                <td>Code Ligne Tache</td>
+                <td>Liblle </td>
+                <td>Competence</td>
+                <td>Prix</td>
+                <td>Etat</td>
+                <td>Operation</td>
+            </tr>
+
+            <%
+                for (LigneTache lt:listA){
+
+                    out.println("<tr><td>"+lt.getIdLT()+"</td>");
+                    out.println("<td>"+lt.getLibLT()+"</td>");
+                    out.println("<td>"+lt.getCompetence().getNomComp()+"</td>");
+                    out.println("<td>"+lt.getPrixLT()+"</td>");
+                    out.println("<td>"+lt.getEtatLT()+"</td>");
+                    out.println("<td><a href='UnTache.jsp?id="+lt.getIdLT()+"'>Consulter</a></td></tr>");
+                }
+            %>
+        </table>
     </div>
 
 </div>
