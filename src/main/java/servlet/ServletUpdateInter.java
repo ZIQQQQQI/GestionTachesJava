@@ -18,7 +18,6 @@ public class ServletUpdateInter extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         String nom=request.getParameter("nom");
-        String prenom=request.getParameter("Prenom");
         Integer siret= Integer.parseInt(request.getParameter("noSiret"));
         String adresse=request.getParameter("adresse");
         String debut=request.getParameter("DateDebut");

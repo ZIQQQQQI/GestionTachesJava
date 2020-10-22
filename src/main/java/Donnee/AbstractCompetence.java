@@ -16,4 +16,12 @@ public abstract class AbstractCompetence {
     public Integer getIdC() {
         return IdC;
     }
+
+    public void setNomComp(String nomComp) {
+        NomComp = nomComp;
+    }
+
+    public void setIdC(Integer idC) {
+        IdC = idC;
+    }
 }

@@ -20,14 +20,14 @@ public class CompetenceDB {
     }
 
     public void ajouterCompetenceIntervenant(Integer idC,Integer idI){
-        String sql="insert into posseder (IdI,IdC) values(?,?) ";
+        String sql="insert into posseder (NoSiret,IdC) values(?,?) ";
        this.template.update(sql,idI,idC);
 
 
     }
 
     public Competence competenceInter(Intervenant i){
-        String sql="select* from posseder p,competence c where c.IdC=p.IdC and p.IdI=?";
+        String sql="select* from posseder p,competence c where c.IdC=p.IdC and p.NoSiret=?";
         List<Map<String,Object>> list=this.template.queryForList(sql,i.getIdI());
         String nom=(String)list.get(0).get("NomC");
         Integer id=(Integer) list.get(0).get("IdC");
@@ -49,7 +49,7 @@ public class CompetenceDB {
     }
 
     public void updateIne(Integer idc,Integer idI){
-        String sql="update posseder set IdC=? where IdI=?";
+        String sql="update posseder set IdC=? where NoSiret=?";
         this.template.update(sql,idc,idI);
 
     }

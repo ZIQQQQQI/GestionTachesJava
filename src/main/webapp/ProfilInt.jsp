@@ -22,7 +22,7 @@
 <div id="gauche">
     <ul>
         <li ><a >Mon Profil</a></li>
-        <li ><a href="/PROJET_war/AccueilInter.html">Mes tâches</a></li>
+        <li ><a href="/PROJET_war/AccueilInter.jsp">Mes tâches</a></li>
     </ul>
 </div>
 
@@ -34,10 +34,10 @@
     <%
     IntervenantDB db=new IntervenantDB();
     Intervenant lui=db.unIntervenant((String)session.getAttribute("mail"));
-    out.print("<h3>Hello!" +lui.getNom()+"</h3>");
-    out.print("Mail:<input type=hidden value="+lui.getMailI()+ " name=email><br/>");
+    out.print("<h3>Hello!" +lui.getMailI()+"</h3>");
+    out.print("<input type=hidden value="+lui.getMailI()+ " name=email><br/>");
     out.print("Nosiret:<input type=text value="+lui.getIdI()+ " name=noSiret><br/>");
-    out.print("Adresse:<input type=text value="+lui.getAdresseI()+ " name=adresse><br/>");
+    out.print("Adresse:<input type=text value=' "+lui.getAdresseI()+ " ' name=adresse><br/>");
     out.print("DispoDebut:<input type=text value="+lui.getDateDebut()+ " name=DateDebut><br/>");
     out.print("DispoFin:<input type=text value="+lui.getDateFin()+ " name=DateFin><br/>");
     out.print("Mot de passe:<input type=text value="+lui.getMdpI()+ " name=password><br/>");

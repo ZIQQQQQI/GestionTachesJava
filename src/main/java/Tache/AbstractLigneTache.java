@@ -39,4 +39,20 @@ public abstract class AbstractLigneTache {
     public void setEtatLT(String etat){
         this.etatLT=etat;
     }
+
+    public Integer getIdLT() {
+        return idLT;
+    }
+
+    public void setIdLT(Integer idLT) {
+        this.idLT = idLT;
+    }
+
+    public AbstractCompetence getCompetence() {
+        return competence;
+    }
+
+    public void setCompetence(AbstractCompetence competence) {
+        this.competence = competence;
+    }
 }

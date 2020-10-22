@@ -8,7 +8,17 @@ public abstract class AbstractIntervenant implements AbstractEntreprise{
     Integer bicI;
     String mdpI;
     String disponibleDebut;
+
+    public Integer getNosiret() {
+        return Nosiret;
+    }
+
+    public void setNosiret(Integer nosiret) {
+        Nosiret = nosiret;
+    }
+
     String disponibleFin;
+    Integer Nosiret=0;
 
     public AbstractIntervenant() {
     }
@@ -23,6 +33,11 @@ public abstract class AbstractIntervenant implements AbstractEntreprise{
         this.mdpI = mdp;
         this.disponibleDebut=debut;
         this.disponibleFin=fin;
+
+    }
+
+    @Override
+    public void entrepreise(String nom, String dateDebut, String dateFin, String profession) {
 
     }
 

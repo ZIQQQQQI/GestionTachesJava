@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/ServletInsInter")
@@ -21,7 +22,7 @@ public class ServletInsInter extends HttpServlet {
         String adresse=request.getParameter("adresse");
         String debut=request.getParameter("DateDebut");
         String fin=request.getParameter("DateFin");
-        String mail=request.getParameter("mail");
+        String mail=request.getParameter("email");
         String mdp=request.getParameter("password");
         Integer idc=Integer.parseInt(request.getParameter("compInf"));
         String proffesopn=request.getParameter("profession");
@@ -31,15 +32,14 @@ public class ServletInsInter extends HttpServlet {
         in.entrepreise(nom,debut,fin,proffesopn);
         IntervenantDB db=new IntervenantDB();
         db.addIntervenant(in);
-
-
-
         Intervenant newIntervenant = db.newIntevenant();
         Integer idI=newIntervenant.getIdI();
         CompetenceDB dbc=new CompetenceDB();
         dbc.ajouterCompetenceIntervenant(idc,idI);
-
-
+        System.out.println(2+nom);
+        HttpSession session = request.getSession(true);
+        session.setAttribute("mail",mail);
+        response.addHeader ("refresh", "3;URL=/PROJET_war/AccueilInter.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -5,6 +5,7 @@ import Compte.Intervenant;
 import Utils.JDBCUtils;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SqlOutParameter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class IntervenantDB {
     public void addIntervenant(Intervenant intervenant ) {
         String raison = intervenant.getNom();
         Integer siret = intervenant.getIdI();
+        System.out.println("1"+raison);
         String mdp = intervenant.getMdpI();
         String adresse = intervenant.getAdresseI();
         Integer iban = intervenant.getIbanI();

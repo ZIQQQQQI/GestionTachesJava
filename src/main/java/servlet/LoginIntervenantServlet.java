@@ -40,7 +40,7 @@ public class LoginIntervenantServlet extends HttpServlet {
         }else{
             HttpSession session = req.getSession(true);
             session.setAttribute("mail",email);
-            resp.addHeader ("refresh", "3;URL=/PROJET_war/AccueilInter.html");
+            resp.addHeader ("refresh", "3;URL=/PROJET_war/AccueilInter.jsp");
 
         }
     }
