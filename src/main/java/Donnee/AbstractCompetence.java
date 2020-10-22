@@ -9,4 +9,11 @@ public abstract class AbstractCompetence {
             this.NomComp = nomComp;
         }
 
+    public String getNomComp() {
+        return NomComp;
+    }
+
+    public Integer getIdC() {
+        return IdC;
+    }
 }

@@ -15,8 +15,10 @@ public class Intervenant extends AbstractIntervenant{
    String profession;
    ArrayList<Competence> listCompetence;
 
+    public Intervenant() {
+    }
 
-    public Intervenant(Integer id, String adresse, String mail, Integer iban, Integer bic, String mdp,String debut,String fin) {
+    public Intervenant(Integer id, String adresse, String mail, Integer iban, Integer bic, String mdp, String debut, String fin) {
         super(id, adresse, mail, iban, bic, mdp,debut,fin);
         this.listCompetence=new ArrayList<>();
     }

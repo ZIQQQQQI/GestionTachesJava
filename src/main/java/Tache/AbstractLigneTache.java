@@ -28,7 +28,7 @@ public abstract class AbstractLigneTache {
         this.tache=tache;
         this.idLT=id;
         this.listIntervenant=new ArrayList<>();
-        tache.addTache(this);
+
 
     }
 

@@ -27,11 +27,12 @@ public class LoginClientServlet extends HttpServlet {
 
         if(client==null){
             resp.getWriter().write("Echec de la connexion");
-            //resp.setHeader("Location","/PROJET_war/login.html");
+            resp.addHeader ("refresh", "3;URL=/PROJET_war/login.html");
+
 
         }else{
-            resp.getWriter().write("reussi de la connexion");
-            //resp.setHeader("Location","index.jsp");
+            resp.addHeader ("refresh", "3;URL=/PROJET_war/index.jsp");
+
         }
     }
 

@@ -2,6 +2,7 @@ package servlet;
 
 import Compte.Intervenant;
 import CompteDataBase.IntervenantDB;
+import DonneeDataBase.CompetenceDB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,13 +23,22 @@ public class ServletInsInter extends HttpServlet {
         String fin=request.getParameter("DateFin");
         String mail=request.getParameter("mail");
         String mdp=request.getParameter("password");
+        Integer idc=Integer.parseInt(request.getParameter("compInf"));
         String proffesopn=request.getParameter("profession");
         Integer iban=Integer.parseInt(request.getParameter("iban"));
         Integer bic=Integer.parseInt(request.getParameter("bic"));
-        Intervenant in=new Intervenant(1,adresse,mail,iban,bic,mdp,debut,fin);
+        Intervenant in=new Intervenant(siret,adresse,mail,iban,bic,mdp,debut,fin);
         in.entrepreise(nom,debut,fin,proffesopn);
         IntervenantDB db=new IntervenantDB();
         db.addIntervenant(in);
+
+
+
+        Intervenant newIntervenant = db.newIntevenant();
+        Integer idI=newIntervenant.getIdI();
+        CompetenceDB dbc=new CompetenceDB();
+        dbc.ajouterCompetenceIntervenant(idc,idI);
+
 
     }
 

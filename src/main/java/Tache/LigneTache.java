@@ -11,7 +11,7 @@ public class LigneTache extends AbstractLigneTache {
 
     public LigneTache(AbstractCompetence competence, Integer id, Tache tache, String libLT, double prixLT, String etatLT, Integer nbPersonne) {
         super(competence,id,tache,libLT, prixLT, etatLT, nbPersonne);
-        tache.addTache(this);
+
     }
 
 

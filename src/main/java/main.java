@@ -71,8 +71,7 @@ public class main {
         }*/
 
 
-        IntervenantDB i=new IntervenantDB();
-        i.addIntervenant(zhang);
+
 
         
 
