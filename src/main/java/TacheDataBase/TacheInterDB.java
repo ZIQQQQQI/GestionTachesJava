@@ -40,9 +40,7 @@ public class TacheInterDB {
                 "intervenant.Profession, posseder.NoSiret, posseder.IdC," +
                 " lignetache.CodeLT, lignetache.CodeT, lignetache.LiblLT," +
                 " lignetache.LiblLT, lignetache.PrixLT, lignetache.NbPersLT, " +
-                "lignetache.EtatLT, lignetache.IdC " +
-                "Having (CONVERT(Intervenant.DateFin,DATE)-CONVERT(Intervenant.DateDebDispo,DATE)) " +
-                "< ( Select DureeT From Tache Where Tache.codeT = ligneTache.codeT)";
+                "lignetache.EtatLT, lignetache.IdC " ;
         List<Map<String,Object>> listLTP =template.queryForList(sql2,email);
         for(Map<String,Object>m :listLTP){
             idc=(Integer) m.get("IdC");
