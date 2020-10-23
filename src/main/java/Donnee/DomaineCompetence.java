@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class DomaineCompetence extends AbstractCompetence{
     ArrayList<AbstractCompetence> listCompetence;
+    //Un domaine possède un ensemblre de compétences
     public DomaineCompetence(String nomComp, Integer id) {
         super(nomComp, id);
         this.listCompetence=new ArrayList<>();

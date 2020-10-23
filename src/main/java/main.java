@@ -7,6 +7,7 @@ import Donnee.Competence;
 import Donnee.DomaineCompetence;
 import Tache.LigneTache;
 import Tache.Tache;
+import TacheDataBase.TacheInterDB;
 import Utils.JDBCUtils;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -70,9 +71,6 @@ public class main {
             System.out.println(((Intervenant)i).getNom());
         }*/
 
-
-        IntervenantDB i=new IntervenantDB();
-        i.addIntervenant(zhang);
 
         
 

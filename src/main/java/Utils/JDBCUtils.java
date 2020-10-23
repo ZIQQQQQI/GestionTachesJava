@@ -8,13 +8,14 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
-
+// Cette classe permet d'assurer une connexion avec la BD
 public class JDBCUtils {
     private static DataSource ds;
 
     static{
         try {
             Properties pro =new Properties();
+            // On récupère le nom et le mot de passe de la BD
             InputStream is=JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties");
             pro.load(is);
 
@@ -26,7 +27,7 @@ public class JDBCUtils {
         }
     }
 
-
+    // Permet d'accorder une connexion
     public static DataSource getDataSource(){
         return ds;
     }
