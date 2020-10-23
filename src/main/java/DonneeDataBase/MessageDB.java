@@ -14,10 +14,12 @@ import java.util.Map;
 public class MessageDB {
 
     private JdbcTemplate template;
-
+    // Connexion avec la BD
     public MessageDB() {
         this.template =new JdbcTemplate(JDBCUtils.getDataSource());;
     }
+    // Cette méthode permet de récuperer tout les méssages échanger pour une ligne de tache
+    // à l'aide d'une requête
 
     public  List<Map<String,Object>> tousMsg(String idTache){
         ArrayList<MessageIntervenant> res=new ArrayList<>();
@@ -40,16 +42,20 @@ public class MessageDB {
 
     }
 
+    //Méthode permettant de retrouver le dernier message
     public Integer dernierMessage(){
         String sql="select max(IdMsg) as id from message  ";
         return (Integer) this.template.queryForList(sql).get(0).get("id");
     };
 
+    //Méthode permettant d'envoyer un message par un intervenant,
+    // donc d'insérer une nouveau message dans la BD
     public void envoyerMsgInter(String contenu,String nosiret,String codeLT){
         SimpleDateFormat sdf =   new SimpleDateFormat( " yyyy-MM-dd" );
         String date = sdf.format(new Date());
         String sql="insert into message (DateMsg,contenueMsg) values (?,?)";
         this.template.update(sql,new Object[]{date,contenu});
+        // On associe le dernier message envoyé avec son expéditeur et la ligne de tache
         String sql2="insert into envoyermsginter (NoSiret,IdMsg,CodeLT) values (?,?,?)";
         this.template.update(sql2,nosiret,this.dernierMessage(),codeLT);
 

@@ -12,10 +12,20 @@
 <html>
 <head>
     <title>Formulaire proposition tache</title>
+    <link rel="stylesheet" href="Style.css"/>
 </head>
 
 <body>
+
 <H1>Proposer une tâche</H1>
+
+<div id="gauche">
+    <ul>
+        <li ><a href="#####">Mon Profil</a></li>
+        <li ><a>Mes tâches</a></li>
+    </ul>
+</div>
+<div id="centre">
 <script type="text/Javascript" >
 
 

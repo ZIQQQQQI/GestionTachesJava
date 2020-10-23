@@ -6,6 +6,7 @@ import Donnee.AbstractServiceClient;
 import Tache.AbstractMessage;
 import Tache.AbstractTache;
 
+// Ce scénario n'a pas été traité car secondaire
 public class Reclamation extends  AbstractReclamation{
     public Reclamation( AbstractTache tache) {
         super(tache);

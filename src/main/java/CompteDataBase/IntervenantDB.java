@@ -13,11 +13,12 @@ import java.util.Map;
 
 public class IntervenantDB {
     private JdbcTemplate template;
-
+    // Cette méthode permet d'obtenir une connexion avec la DataBase.
     public IntervenantDB() {
         this.template =new JdbcTemplate(JDBCUtils.getDataSource());;
     }
-
+    // Cette méthode permet de vérifier récupérer toutes les informations du client lors de sa connexion.
+    // Si le client n'existe pas de client, la méthode ne retourne rien.
     public Intervenant login(Intervenant intervenant){
         try {
             Intervenant res=null;
@@ -47,6 +48,7 @@ public class IntervenantDB {
 
     }
 
+    // Cette méthode permet d'inscrire un Intervenant dans la BD
     public void addIntervenant(Intervenant intervenant ) {
         String raison = intervenant.getNom();
         Integer siret = intervenant.getIdI();
@@ -65,20 +67,22 @@ public class IntervenantDB {
 
     }
 
+    // Cette méthode permet de retrouver le dernier intervenant s'étant inscrit dans la BD
     public Intervenant newIntevenant(){
 
         String sql="select* from intervenant where IdI=(select max(IdI) from intervenant) ";
         List<Map<String,Object>> newClient=this.template.queryForList(sql);
         return this.sqlIntervenant(newClient);
     }
-    //change comme mail idi
-    public Intervenant unIntervenant(String idp){
+
+    //Méthode permettant de retrouver un client; lorsqu'on connait son maiLl en entrée
+    public Intervenant unIntervenant(String mail){
         String sql="select* from intervenant where MailI=? ";
-        List<Map<String,Object>> newInter=this.template.queryForList(sql,idp);
+        List<Map<String,Object>> newInter=this.template.queryForList(sql,mail);
         return this.sqlIntervenant(newInter);
     }
 
-
+    // Cette méthode permet de modifier les données d'un intervenant lorsqu'on connait son mail
     public  void updateIntevenant(Intervenant intervenant){
 
         String raison = intervenant.getNom();
@@ -99,7 +103,8 @@ public class IntervenantDB {
 
 
 
-
+    //Cette méthode permet de traiter les résultats d'une requête; ici NewClient (intervenant)
+    // Et de stocker chaque colonne dans une variable; Ensuite on crée l'objet Intervenant avec les variables en entrées
     public  Intervenant sqlIntervenant( List<Map<String,Object>> newClient){
         Integer id= (Integer) newClient.get(0).get("NoSiret");
         String adresse=(String) newClient.get(0).get("AdresseI");

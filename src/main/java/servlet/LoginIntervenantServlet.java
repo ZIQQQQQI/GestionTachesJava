@@ -13,9 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/LoginIntervenantServlet")
+
+@WebServlet("/LoginIntervenantServlet") // Récupère les informations du formulaire de connexion de l'intervenant
 public class LoginIntervenantServlet extends HttpServlet {
+    // La structure est la même pour toutes les classes Servlet
     @Override
+    // Pour recupérer toutes les informations du formulaire et envoie une réponse à la page
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         String email=req.getParameter("username");
@@ -46,6 +49,7 @@ public class LoginIntervenantServlet extends HttpServlet {
     }
 
     @Override
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doGet(req,resp);
     }

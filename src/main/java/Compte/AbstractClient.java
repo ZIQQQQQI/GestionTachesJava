@@ -23,6 +23,7 @@ public abstract class AbstractClient implements AbstractPersonne,AbstractEntrepr
     Integer bic ;
     String mdp ;
 
+    //Constructeur
     public AbstractClient(){
 
     }

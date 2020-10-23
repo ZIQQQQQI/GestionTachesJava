@@ -17,6 +17,8 @@ public class TacheClientDB {
     public TacheClientDB() {
         this.template =new JdbcTemplate(JDBCUtils.getDataSource());
     }
+ // Ce scénario n'a pas été utilisé dans l'interface;
+    // mais permet d'afficher toutes les tâches qu'un client à proposé
 
     public ArrayList<LigneTache> getLigneTache(String email){
         ArrayList<LigneTache> resultat =new ArrayList<>();

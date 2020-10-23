@@ -41,15 +41,15 @@
         List<Map<String,Object>> list=dbi.unTache(id);
         for (Map<String,Object> m:list
         ) {
-            out.println("<tr><td>NomClient:"+m.get("NomC")+"</td></tr>");
-            out.println("<tr><td>PrenomClient:"+m.get("PrenomC")+"</td></tr>");
-            out.println("<tr><td>LibelleLigneTache:"+m.get("liblLt")+"</td></tr>");
+            out.println("<tr><td>Nom Client:"+m.get("NomC")+"</td></tr>");
+            out.println("<tr><td>Prenom Client:"+m.get("PrenomC")+"</td></tr>");
+            out.println("<tr><td>Libelle LigneTache:"+m.get("liblLt")+"</td></tr>");
             out.println("<tr><td>Prix:"+m.get("PrixLT")+"</td></tr>");
-            out.println("<tr><td>NombrePersonne:"+m.get("NbPersLT")+"</td></tr>");
+            out.println("<tr><td>Nombre de personne requises:"+m.get("NbPersLT")+"</td></tr>");
             out.println("<tr><td>Duree:"+m.get("DureeT")+" Jours</td></tr>");
-            out.println("<tr><td>DescriptionTahce:"+m.get("DescriptionT")+"</td></tr>");
-            out.println("<tr><td>NoteCommunication:"+m.get("noteC")+"</td></tr>");
-            out.println("<tr><td>NoteRentablite:"+m.get("noteR")+"</td></tr>");
+            out.println("<tr><td>Description Tache:"+m.get("DescriptionT")+"</td></tr>");
+            out.println("<tr><td>Note Communication:"+m.get("noteC")+"</td></tr>");
+            out.println("<tr><td>Note Rentablite:"+m.get("noteR")+"</td></tr>");
 
         }
 

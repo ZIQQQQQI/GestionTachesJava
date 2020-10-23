@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Intervenant extends AbstractIntervenant{
+    // Au départ nous avons créer une classe intervenant avec des méthodes, cependant maintenant elles sont
+    // toutes prises en charges par la BD. On les retrouve dans le Package CompteDataBase.
+    // Nous utilisons seulement le constructeur de cette classe ainsi que les méthodes get et set
    String nom;
    String dateDebut;
    String dateFin;

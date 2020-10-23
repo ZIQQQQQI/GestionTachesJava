@@ -12,12 +12,13 @@ import java.util.Map;
 
 public class ClientDB {
     private JdbcTemplate template;
-
+     // Cette méthode permet d'obtenir une connexion avec la DataBase.
     public ClientDB() {
         this.template =new JdbcTemplate(JDBCUtils.getDataSource());;
     }
 
-
+    // Cette méthode permet de vérifier récupérer toutes les informations du client lors de sa connexion.
+    // Si le client n'existe pas de client, la méthode ne retourne rien.
     public Client login(Client loginClient){
         try {
             Client client=null;
@@ -45,7 +46,7 @@ public class ClientDB {
 
     }
 
-
+    // Cette méthode permet d'inscrire un client dans la BD
     public void ajouterClient(Client client){
 
         String adresse=client.getAdresse();
@@ -57,6 +58,7 @@ public class ClientDB {
         this.template.update(sql,adresse,mail,iban,bic,mdp);
     }
 
+    //Cette méthode permet de retrouver le dernier client s'étant inscrit dans la plateforme
     public Client newClient(){
         String sql="select* from client where IdClient=(select max(IdClient) from client) ";
         List<Map<String,Object>> newClient=new ArrayList<>();
@@ -65,21 +67,7 @@ public class ClientDB {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Les méthodes ont exactement la même utilité que celles dans IntervenantDB
 
 
     public  Client sqlClient(List<Map<String,Object>> newClient){

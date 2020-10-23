@@ -15,6 +15,7 @@ public class ProposerTacheDB {
         this.template =new JdbcTemplate(JDBCUtils.getDataSource());
     }
 
+    // Méthode pour crée une nouvelle tache
     public void ajouterTache(Tache t){
         String sql="insert into tache (LiblT,DescriptionT,DureeT,IdClient,EtatT) values(?,?,?,1,?)";
 
@@ -26,6 +27,7 @@ public class ProposerTacheDB {
         template.update(sql,nomtache,description,duree,etat);
     }
 
+    // Créer une ligne de tache pour la dernière tache crée
     public void ajouterligneTache(ArrayList<LigneTache> listLT){
         String sql="select max(CodeT) as id from tache";
         Integer codeT=(Integer)template.queryForList(sql).get(0).get("id");

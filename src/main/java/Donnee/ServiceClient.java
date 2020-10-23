@@ -7,6 +7,8 @@ import java.util.Date;
 
 public class ServiceClient extends AbstractServiceClient {
 
+        //Cette classe permet de construire un objet ServiceClien, cependant nous n'avons pas traité ce scénario
+    // Car il est secondaire est similaire à d'autre que nous avons développé.
     public ServiceClient(String nomServiceClient,Integer id) {
         super(nomServiceClient,id);
     }

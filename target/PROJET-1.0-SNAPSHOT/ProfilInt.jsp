@@ -36,12 +36,13 @@
     Intervenant lui=db.unIntervenant((String)session.getAttribute("mail"));
     out.print("<h3>Hello! " +lui.getMailI()+"</h3>");
     out.print("<input type=hidden value="+lui.getMailI()+ " name=email><br/>");
+    out.print("Nom:<input type=text value="+lui.getNom() +" name=raison><br/>");
     out.print("Nosiret:<input type=text value="+lui.getIdI()+ " name=noSiret><br/>");
     out.print("Adresse:<input type=text value=' "+lui.getAdresseI()+ " ' name=adresse><br/>");
-    out.print("DispoDebut:<input type=text value="+lui.getDateDebut()+ " name=DateDebut><br/>");
-    out.print("DispoFin:<input type=text value="+lui.getDateFin()+ " name=DateFin><br/>");
+    out.print("Disponibilite date debut:<input type=text value="+lui.getDateDebut()+ " name=DateDebut><br/>");
+    out.print("Disponibilite date fin:<input type=text value="+lui.getDateFin()+ " name=DateFin><br/>");
     out.print("Mot de passe:<input type=text value="+lui.getMdpI()+ " name=password><br/>");
-    out.print("Proffession:<input type=text value="+lui.getProfession()+ " name=profession><br/>");
+    out.print("Profession:<input type=text value="+lui.getProfession()+ " name=profession><br/>");
     out.print("Iban:<input type=text value="+lui.getIbanI()+ " name=iban><br/>");
     out.print("Bic:<input type=text value="+lui.getBicI()+ " name=bic><br/>");
     %>

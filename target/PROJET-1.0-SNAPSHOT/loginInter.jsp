@@ -11,16 +11,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="Style.css"/>
 </head>
-<body>
-<h1 style="text-align: center">Se Connecter</h1>
-<form action="/PROJET_war/LoginIntervenantServlet" method="get" style="text-align: center" >
-    Identifiant:<input type="text" name="username"> <br>
-    Mot de Passe:<input type="password" name="password"><br>
+<body id="bodyIns">
 
-    <input type="submit" value="Se connecter">
 
-</form>
+<h1>Se Connecter</h1>
+<div id="centreIns">
+    <form action="/PROJET_war/LoginIntervenantServlet" method="get" style="text-align: center" >
+        Identifiant:<br/>
+        <input type="text" name="username" placeholder="id"> <br>
+        Mot de Passe:<br/>
+        <input type="password" name="password" placeholder="mdp"><br>
+
+
+        <input class= "btn" type="submit" value="Se connecter">
+
+    </form>
+</div>
+
 
 </body>
 </html>

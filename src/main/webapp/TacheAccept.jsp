@@ -36,15 +36,15 @@
             String etat=null;
             for (Map<String,Object> m:list
             ) {
-                out.println("<tr><td>NomClient:"+m.get("NomC")+"</td></tr>");
-                out.println("<tr><td>PrenomClient:"+m.get("PrenomC")+"</td></tr>");
-                out.println("<tr><td>LibelleLigneTache:"+m.get("liblLt")+"</td></tr>");
+                out.println("<tr><td>Nom Client:"+m.get("NomC")+"</td></tr>");
+                out.println("<tr><td>Prenom Client:"+m.get("PrenomC")+"</td></tr>");
+                out.println("<tr><td>Libelle LigneTache:"+m.get("liblLt")+"</td></tr>");
                 out.println("<tr><td>Prix:"+m.get("PrixLT")+"</td></tr>");
-                out.println("<tr><td>NombrePersonne:"+m.get("NbPersLT")+"</td></tr>");
+                out.println("<tr><td>Nombre Personne:"+m.get("NbPersLT")+"</td></tr>");
                 out.println("<tr><td>Duree:"+m.get("DureeT")+" Jours</td></tr>");
-                out.println("<tr><td>DescriptionTahce:"+m.get("DescriptionT")+"</td></tr>");
-                out.println("<tr><td>NoteCommunication:"+m.get("noteC")+"</td></tr>");
-                out.println("<tr><td>NoteRentablite:"+m.get("noteR")+"</td></tr>");
+                out.println("<tr><td>Description Tache:"+m.get("DescriptionT")+"</td></tr>");
+                out.println("<tr><td>Note Communication:"+m.get("noteC")+"</td></tr>");
+                out.println("<tr><td>Note Rentablite:"+m.get("noteR")+"</td></tr>");
                  etat=(String)m.get("etat");
             }
 
@@ -57,7 +57,7 @@
         if(etat.equals("terminee")){
             out.print( "<a href=####><input class='btnEchanger' type='button' value='Client'></a>");
         }else{
-            out.print( "<a href='/PROJET_war/Forum.jsp?id?id="+id+"'><input class='btnEchanger' type='button' value='Client'></a>");
+            out.print( "<a href='/PROJET_war/Forum.jsp?id="+id+"'><input class='btnEchanger' type='button' value='Client'></a>");
         }
     %>
 
@@ -70,11 +70,13 @@
 <div>
     <label for="rendre">Rendre un document:</label>
     <br/>
+
     <%
         if(etat.equals("terminee")){
-            out.print("<a href=###><input class='btn' type='button' value= 'deja Terminee'></a>");
+            out.print("<a href=###><input class='btn' type='button' value= 'deja Rendu'></a>");
         }else{
-            out.print( "<a href='/PROJET_war/NoteCli.jsp?id="+id+"'><input class='btn' type='button' value='Terminer'></a>");
+            out.print("<input type='file' id='rendre' name='rendre'>");
+            out.print( "<a href='/PROJET_war/NoteCli.jsp?id="+id+"'><input class='btn' type='button' value='Rendre'></a>");
         }
     %>
 
